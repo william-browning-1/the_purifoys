@@ -1,0 +1,73 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Brush Script MT', cursive;
+    text-align: center;
+    background-color: #000;
+  }
+  
+  h1 {
+    position: absolute;
+    top: 5%; /* Position near the top */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 55px;
+    color: white;
+    z-index: 3; /* Ensures it stays on top of timer and images */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Adds contrast */
+    pointer-events: none;
+  }
+  
+  #timer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 45px;
+    color: white;
+    z-index: 2; /* Ensures it stays above the images */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Makes text readable */
+    pointer-events: none; /* Prevents interaction issues */
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+    position: relative;
+  }
+  
+  .column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+    position: relative;
+  }
+  
+  .column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px; /* Adds rounded edges */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds shadow to images */
+    transition: transform 0.1s ease; /* Reduced transition time */
+  }
+  
+  .column img:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    transition: transform .01s ease-in-out;
+  }
+  .column {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+  }
+  .grid-container {
+    display: grid;
+    grid-column-end: span 4;
+  }
