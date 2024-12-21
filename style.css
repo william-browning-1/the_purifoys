@@ -1,3 +1,4 @@
+/* General resets */
 * {
   box-sizing: border-box;
 }
@@ -8,6 +9,7 @@ body {
   background-color: lightblue;
 }
 
+/* Collage section */
 .collage {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
@@ -30,24 +32,11 @@ body {
 .collage img:nth-child(3n) {
   --span-columns: 3;
 }
-
 .collage img:hover {
-  transform: scale(1.2); /* Scale image on hover */
+  transform: scale(1.2);
 }
 
-.large-images {
-  flex: 1; /* Section for larger images */
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.large-images img {
-  width: 100%; /* Full width of the container */
-  height: auto; /* Keep aspect ratio */
-  border-radius: 8px;
-}
-
+/* Navbar styling */
 .navbar {
   position: fixed;
   bottom: 0;
@@ -56,69 +45,121 @@ body {
   display: flex;
   justify-content: space-around;
   padding: 10px 0;
-  z-index: 10; /* Ensures it stays above other content */
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Adds contrast */
+  z-index: 10;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
-
 .navbar a {
   color: white;
   text-decoration: none;
-  font-size: 30px;
+  font-size: 20px;
   padding: 8px 12px;
   border-radius: 5px;
   transition: background-color 0.3s;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Adds contrast */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
-
 .navbar a:hover {
   background-color: #996633;
 }
-.welcome-section {
-  font-size: 20px;
-  color: white;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Makes text readable */
+
+/* Notebook page */
+.notebook-page {
+  width: 90%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 5px solid lightblue;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  height: 70vh;
 }
-.timer-message {
+.notebook-page::before {
+  content: '';
   position: absolute;
-  top: 50%;
-  left: 30%;
-  transform: translate(-50%, -50%);
-  font-size: 55px;
-  color: white;
-  z-index: 2; /* Ensures it stays above the images */
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Makes text readable */
-  pointer-events: none; /* Prevents interaction issues */
+  top: 0;
+  left: 50px;
+  width: 2px;
+  height: 100%;
+  background-color: lightblue;
+  z-index: 0;
+}
+.notebook-page::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    to bottom,
+    #d9eaf7 0%,
+    #d9eaf7 1px,
+    transparent 1px,
+    transparent 24px
+  );
+  z-index: 0;
+}
+p {
+  margin: 6;
+  font-family: 'Brush Script MT', cursive;
+  line-height: 26px;
+  z-index: 1;
+  position: relative;
+  font-size: 24px;
+  text-align: left;
+  padding-left: 5%;
 }
 
-.timer-title {
-  position: absolute;
-  top: 10%; /* Position near the top */
-  left: 30%;
-  transform: translateX(-50%);
-  font-size: 55px;
-  color: white;
-  z-index: 3; /* Ensures it stays on top of timer and images */
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Adds contrast */
-  pointer-events: none;
-}
-
+/* Timer section */
+.timer-title,
+.timer-message,
 #timer {
   position: absolute;
-  top: 40%;
-  left: 30%;
-  transform: translate(-50%, -50%);
-  font-size: 35px;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%);
+  font-size: 40px;
   color: white;
-  z-index: 2; /* Ensures it stays above the images */
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Makes text readable */
-  pointer-events: none; /* Prevents interaction issues */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  pointer-events: none;
+}
+.timer-title {
+  left: 50%;
+  top: 5%;
+}
+.timer-message {
+  left: 48%;
+  top: 30%;
+}
+#timer {
+  top: 20%;
 }
 
-.time {
-  background-color: #f0f0f0; /* Placeholder color */
-  background-image: url('7M9A0142-Enhanced-NR-2 (1).jpg');
-  background-size: cover; /* Makes the image span the entire element */
-  background-repeat: no-repeat; /* Prevents the image from repeating */
-  background-position: center; /* Centers the image within the element */
-  height: calc(100% - 50px); /* Adjust '50px' to the height of your navbar */
+/* Mobile-specific styles */
+@media only screen and (max-width: 600px) {
+  .collage {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+  }
+  .navbar a {
+    font-size: 16px;
+  }
+  .notebook-page {
+    width: 95%;
+    height: 80vh;
+    padding: 15px;
+  }
+  p {
+    font-size: 18px;
+    padding-left: 3%;
+  }
+  .timer-title,
+  .timer-message,
+  #timer {
+    font-size: 20px;
+    top: unset;
+    position: static;
+    text-align: center;
+  }
 }
