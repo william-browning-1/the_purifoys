@@ -130,6 +130,7 @@ p {
     margin: 10px auto;
     padding: 25px;
     height: auto; /* Allow the page to grow */
+    font-family: cursive;
   }
   p {
     left: 5%;
