@@ -127,13 +127,13 @@ p {
   .notebook-page {
     width: 95%; /* Slightly wider on mobile */
     margin: 10px auto;
-    padding: 15px;
+    padding: 25px;
     height: auto; /* Allow the page to grow */
   }
   p {
     left: 5%;
-    font-size: 16px; /* Smaller text for mobile */
-    line-height: 22px;
+    font-size: 22px; /* Smaller text for mobile */
+    line-height: 28px;
   }
   .timer-title,
   .timer-message,
