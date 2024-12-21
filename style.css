@@ -131,6 +131,7 @@ p {
     height: auto; /* Allow the page to grow */
   }
   p {
+    left: 5%;
     font-size: 16px; /* Smaller text for mobile */
     line-height: 22px;
   }
