@@ -138,7 +138,7 @@ p {
   }
   .timer-title,
   .timer-message,
-  #timer {
+  .timer {
     font-size: 20px; /* Reduce size for small screens */
     margin-top: 10px;
   }
