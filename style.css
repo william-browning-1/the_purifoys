@@ -9,6 +9,7 @@ body {
   font-family: 'Brush Script MT', cursive;
   background-color: lightblue;
   overflow-x: hidden; /* Prevent horizontal scrolling */
+  padding-bottom: 60px;
 }
 
 /* Collage section */
