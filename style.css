@@ -132,8 +132,8 @@ p {
   }
   p {
     left: 5%;
-    font-size: 22px; /* Smaller text for mobile */
-    line-height: 28px;
+    font-size: 28px; /* Smaller text for mobile */
+    line-height: 22px;
   }
   .timer-title,
   .timer-message,
