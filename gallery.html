@@ -5,12 +5,36 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <div class="navbar">
-        <a href="timer.html">Time Since Married</a>
         <a href="from_will.html">Will's Note</a>
         <a href="gallery.html">Gallery</a>
      </div>
 </head>
 <body>
+    <body class="timer-title">
+        <h1>You've Been Married For... <br>
+        </h1>
+    
+    
+    
+        <div id="timer"><script>
+        const weddingDate = new Date('2024-12-13T14:53:21');
+        function updateTimer() {
+          const now = new Date();
+          const diff = now - weddingDate;
+      
+          const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+          const minutes = Math.floor((diff / (1000 * 60)) % 60);
+          const seconds = Math.floor((diff / 1000) % 60);
+      
+          document.getElementById('timer').textContent =
+            `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+        updateTimer();
+        setInterval(updateTimer, 1000);
+            </script>
+        </div>
+    </body>
     <div class="collage">
         <img src="Screenshot 2024-11-22 at 3.08.21 PM.png" alt="">
         <img src="Screenshot 2024-11-22 at 3.09.09 PM.png" alt="">
