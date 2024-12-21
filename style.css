@@ -63,7 +63,7 @@ body {
 
 /* Notebook page */
 .notebook-page {
-  width: 90%;
+  width: 95%;
   margin: 20px auto;
   padding: 20px;
   background-color: #fff;
@@ -137,16 +137,12 @@ p {
 }
 
 /* Mobile-specific styles */
-@media only screen and (max-width: 600px) {
-  .collage {
-    grid-template-columns: 1fr;
-    grid-auto-rows: auto;
-  }
+@media only screen and (max-width: 480px) {
   .navbar a {
     font-size: 16px;
   }
   .notebook-page {
-    width: 95%;
+    width: 85%;
     height: 80vh;
     padding: 15px;
   }
@@ -154,7 +150,10 @@ p {
     font-size: 18px;
     padding-left: 3%;
   }
-  .timer-title,
+  .timer-title{
+    position: center;
+    
+  }
   .timer-message,
   #timer {
     font-size: 20px;
