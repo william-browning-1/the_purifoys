@@ -133,7 +133,7 @@ p {
   p {
     left: 5%;
     font-size: 28px; /* Smaller text for mobile */
-    line-height: 22px;
+    line-height: 30px;
   }
   .timer-title,
   .timer-message,
