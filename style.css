@@ -6,33 +6,29 @@
 body {
   font-family: cursive;
   background-color: lightblue;
-  overflow-y: scroll; /* Prevent horizontal scrolling */
+  overflow-y: auto; /* Prevent unnecessary scrolling */
   padding-bottom: 60px;
 }
 
 /* Collage section */
 .collage {
   display: grid;
-  left: 50%;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Default layout */
-  grid-auto-rows: 100px;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Better mobile scaling */
+  grid-auto-rows: 200px;
   gap: 10px;
   padding: 10px;
-  position: static;
-
 }
 .collage img {
   width: 100%;
   height: 100%;
-  left: 50%;
   object-fit: cover;
   border-radius: 8px;
-  grid-column: span calc(var(--span-columns, 2));
-  grid-row: span calc(var(--span-rows, 2));
-  position: relative;
+  transition: transform 0.3s;
 }
-.collage img:hover {
-  transform: scale(1.2);
+@media (hover: hover) { 
+  .collage img:hover {
+    transform: scale(1.1);
+  }
 }
 
 /* Navbar styling */
@@ -45,13 +41,14 @@ body {
   justify-content: space-around;
   padding: 10px 0;
   z-index: 10;
-  overflow: scroll;
+  overflow-x: auto; /* Allows scrolling if content overflows */
+  white-space: nowrap;
 }
 .navbar a {
   color: white;
   text-decoration: none;
-  font-size: 18px;
-  padding: 8px 12px;
+  font-size: 16px;
+  padding: 8px 10px;
   border-radius: 5px;
   transition: background-color 0.3s;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
@@ -66,12 +63,12 @@ body {
   margin: 20px auto;
   padding: 20px;
   background-color: #fff;
-  border: 5px solid lightblue;
+  border: 4px solid lightblue;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
-  overflow: hidden;
   height: 70vh;
+  overflow-y: auto; /* Scrollable for smaller screens */
 }
 .notebook-page::before {
   content: '';
@@ -81,7 +78,6 @@ body {
   width: 2px;
   height: 100%;
   background-color: lightblue;
-  z-index: 0;
 }
 .notebook-page::after {
   content: '';
@@ -97,14 +93,11 @@ body {
     transparent 1px,
     transparent 24px
   );
-  z-index: 0;
 }
 p {
   margin: 10px;
   line-height: 24px;
-  z-index: 1;
-  position: relative;
-  font-size: 20px;
+  font-size: 18px;
   text-align: left;
 }
 
@@ -113,10 +106,31 @@ p {
 .timer-message,
 #timer {
   text-align: center;
-  font-size: 32px;
+  font-size: 28px;
   color: white;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-  top: 50%;
-  position: fixed;
 }
 
+/* Responsive Design Adjustments */
+@media (max-width: 600px) {
+  .collage {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    grid-auto-rows: 150px;
+  }
+  .notebook-page {
+    padding: 15px;
+    height: auto;
+  }
+  .timer-title,
+  .timer-message,
+  #timer {
+    font-size: 24px;
+  }
+  .navbar {
+    font-size: 14px;
+  }
+  .navbar a {
+    padding: 6px 8px;
+    font-size: 14px;
+  }
+}
