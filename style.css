@@ -111,26 +111,34 @@ p {
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
-/* Responsive Design Adjustments */
-@media (max-width: 600px) {
+/* Mobile-specific styles */
+@media only screen and (max-width: 600px) {
   .collage {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 3fr));
-    grid-auto-rows: 200px;
+    grid-template-columns: 1fr; /* One column for images */
+    gap: 5px; /* Smaller gaps */
+  }
+  .navbar a {
+    font-size: 14px; /* Smaller font size */
+    padding: 6px 8px;
   }
   .notebook-page {
-    padding: 15px;
-    height: auto;
+    width: 95%; /* Slightly wider on mobile */
+    margin: 10px auto;
+    padding: 25px;
+    height: auto; /* Allow the page to grow */
+    font-family: cursive;
+  }
+  p {
+    left: 5%;
+    font-size: 26px; /* Smaller text for mobile */
+    line-height: 30px;
   }
   .timer-title,
   .timer-message,
-  #timer {
-    font-size: 24px;
-  }
-  .navbar {
-    font-size: 14px;
-  }
-  .navbar a {
-    padding: 6px 8px;
-    font-size: 14px;
+  .timer {
+    font-size: 20px; /* Reduce size for small screens */
+    top: 50%;
+    padding-bottom: 20%;
   }
 }
+
