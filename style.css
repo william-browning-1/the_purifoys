@@ -92,7 +92,7 @@ body {
     transparent 1px,
     transparent 24px
   );
-  z-index: 0;
+  ;
 }
 p {
   margin: 10px;
@@ -101,6 +101,7 @@ p {
   position: relative;
   font-size: 20px;
   text-align: left;
+  z-index: 10;
 }
 
 /* Timer section */
