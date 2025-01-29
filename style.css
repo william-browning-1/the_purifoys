@@ -1,3 +1,4 @@
+/* General resets */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,15 +7,15 @@
 body {
   font-family: cursive;
   background-color: lightblue;
-  overflow-y: auto; /* Prevent unnecessary scrolling */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
   padding-bottom: 60px;
 }
 
 /* Collage section */
 .collage {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Better mobile scaling */
-  grid-auto-rows: 200px;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Default layout */
+  grid-auto-rows: 100px;
   gap: 10px;
   padding: 10px;
 }
@@ -23,12 +24,11 @@ body {
   height: 100%;
   object-fit: cover;
   border-radius: 8px;
-  transition: transform 0.3s;
+  grid-column: span calc(var(--span-columns, 2));
+  grid-row: span calc(var(--span-rows, 2));
 }
-@media (hover: hover) { 
-  .collage img:hover {
-    transform: scale(1.1);
-  }
+.collage img:hover {
+  transform: scale(1.2);
 }
 
 /* Navbar styling */
@@ -41,14 +41,12 @@ body {
   justify-content: space-around;
   padding: 10px 0;
   z-index: 10;
-  overflow-x: auto; /* Allows scrolling if content overflows */
-  white-space: nowrap;
 }
 .navbar a {
   color: white;
   text-decoration: none;
-  font-size: 16px;
-  padding: 8px 10px;
+  font-size: 18px;
+  padding: 8px 12px;
   border-radius: 5px;
   transition: background-color 0.3s;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
@@ -57,6 +55,7 @@ body {
   background-color: #996633;
 }
 
+/* Notebook page */
 .notebook-page {
   width: 90%;
   margin: 20px auto;
@@ -109,9 +108,11 @@ p {
 .timer-message,
 #timer {
   text-align: center;
-  font-size: 28px;
+  font-size: 32px;
   color: white;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  top: 50%;
+  position: fixed;
 }
 
 /* Mobile-specific styles */
@@ -142,6 +143,6 @@ p {
     font-size: 20px; /* Reduce size for small screens */
     top: 50%;
     padding-bottom: 20%;
+    position: fixed;
   }
 }
-
