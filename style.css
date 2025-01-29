@@ -95,10 +95,10 @@ body {
   );
 }
 p {
+  left: 2%;
   margin: 10px;
   line-height: 24px;
   font-size: 18px;
-  text-align: left;
 }
 
 /* Timer section */
@@ -123,6 +123,7 @@ p {
   }
   .notebook-page {
     width: 95%; /* Slightly wider on mobile */
+    height: 70%;
     margin: 10px auto;
     padding: 25px;
     height: auto; /* Allow the page to grow */
