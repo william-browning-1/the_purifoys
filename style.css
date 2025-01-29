@@ -13,7 +13,7 @@ body {
 /* Collage section */
 .collage {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Better mobile scaling */
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Better mobile scaling */
   grid-auto-rows: 200px;
   gap: 10px;
   padding: 10px;
@@ -111,3 +111,26 @@ p {
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
+/* Responsive Design Adjustments */
+@media (max-width: 600px) {
+  .collage {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    grid-auto-rows: 150px;
+  }
+  .notebook-page {
+    padding: 15px;
+    height: auto;
+  }
+  .timer-title,
+  .timer-message,
+  #timer {
+    font-size: 24px;
+  }
+  .navbar {
+    font-size: 14px;
+  }
+  .navbar a {
+    padding: 6px 8px;
+    font-size: 14px;
+  }
+}
