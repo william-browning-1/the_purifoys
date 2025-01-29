@@ -95,10 +95,12 @@ body {
   );
 }
 p {
-  left: 2%;
   margin: 10px;
   line-height: 24px;
-  font-size: 18px;
+  z-index: 1;
+  position: relative;
+  font-size: 20px;
+  text-align: left;
 }
 
 /* Timer section */
@@ -131,7 +133,7 @@ p {
   p {
     left: 5%;
     font-size: 26px; /* Smaller text for mobile */
-    line-height: 35px;
+    line-height: 30px;
   }
   .timer-title,
   .timer-message,
